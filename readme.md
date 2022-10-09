@@ -1,5 +1,11 @@
-# Aplikasi Back End data perpustakaan
+# Aplikasi Back End data perpustakaan IndevPro
 **By: Mohammad Khoirul Anam**
+
+## Stack
+- Bahasa: JavaScript (Node.js)
+- Framework: Express
+- Database: MySQL
+- Type: Aplikasi berbasis BackEnd(RESTful API) dengan respon berupa JSON
 
 ## Requirement
 Peminjaman Buku Perpustakaan FTI Unmer
@@ -23,3 +29,22 @@ Catatan*
 Tabel DB Sudah disediakan
 
 ## Menjalankan Aplikasi
+
+- Install package NPM
+```
+npm install
+```
+- Hapus .example dari .env.example 
+- Jalankan aplikasi
+
+```
+npm run start
+```
+atau
+```
+npm start
+```
+
+**Pastikan database sudah diimpor**
+
+**Daftar routing dapat dilihat di direktori routes (tidak sempat membuat dokumentasi)**
