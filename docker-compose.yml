@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+ mysqldb:
+  image: mariadb:latest
+  container_name: mariadb
+  environment:
+    MYSQL_USER: root
+    MYSQL_DATABASE: dbperpus
+  ports:
+    - 3307:3306
+  networks: 
+    - db-network
+  volumes: 
+    - db:/var/lib/mysql
+    - ./dbtemp/dbperpus.sql:/docker-entrypoint-initdb.d/dbperpus.sql
+
+ app:
+  depends_on: 
+    - mysqldb
+  build: .
+  env_file: ./.env 
+  ports: 
+    - 9999:9999
+  environment:
+    - VERIF_KEY=khoirul-anam
+  networks: 
+   - db-network
+  # command: bash -c 'while !</dev/tcp/mysqldb/3306; do sleep 1; done; npm start'
+  stdin_open: true
+  tty: true
+
+networks:
+ db-network: 
+  driver: bridge
+
+volumes:
+  db:
