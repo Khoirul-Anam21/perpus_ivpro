@@ -3,8 +3,7 @@ const app = express();
 const errorHandler = require("./error_handler");
 const router = require("./routes");
 const cors = require("cors");
-let {connectDB} = require("./config/connection");
-// const runConnection = require("./config/connection");
+
 
 function main() {
   require("dotenv").config();
