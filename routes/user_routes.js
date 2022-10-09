@@ -14,4 +14,4 @@ userRouter.get("/books", auth_middleware, userController.respondGetBooks);
 userRouter.get("/books/:id", auth_middleware, userController.respondGetBookDetail);
 userRouter.post("/register", userController.respondRegister);
 
-module.exports = userRouter;
+module.exports = userRouter; 
